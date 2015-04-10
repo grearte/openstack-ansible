@@ -14,7 +14,7 @@
   template: src=scripts/neutron-init.sh.j2 dest=~/scripts/neutron-init.sh mode="u+x"
   register: neutron_entities
 
-- name: execute neutron-entities
+- name: execute sysctl.conf changes apply
   shell: ~/scripts/neutron-init.sh
   when: neutron_entities.changed
 
